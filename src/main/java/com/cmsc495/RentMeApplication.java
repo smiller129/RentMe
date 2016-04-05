@@ -1,3 +1,8 @@
+/*
+ * RentMe.java
+ * 
+ * Main Application.
+ */
 package com.cmsc495;
 
 import org.springframework.boot.SpringApplication;

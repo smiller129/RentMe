@@ -1,3 +1,6 @@
+/**
+ * Angular Controllers.  Used to communicate with the server.
+ */
 rentmeApp.controller('greetingController', ['$scope', '$http',
   function ($scope, $http) {
 	$http.get('/greeting')

@@ -1,3 +1,10 @@
+/*
+ * GreetingController.java
+ * 
+ * Returns either the given name or "CMSC495".
+ * To return a name other than the default, use /greeting?name=<name>
+ * Example to display "Welcome Class" use /greeting?name=Class
+ */
 package com.cmsc495;
 
 import org.springframework.stereotype.Controller;

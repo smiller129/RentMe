@@ -1,3 +1,8 @@
+/**
+ * Greeting.java
+ * 
+ * Simple object returned by GreetingController.
+ */
 package com.cmsc495;
 
 public class Greeting {

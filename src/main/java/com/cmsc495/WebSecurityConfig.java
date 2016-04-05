@@ -1,3 +1,8 @@
+/*
+ * WebSecurityConfig.java
+ * 
+ * Used to secure API points on the site behind logins.
+ */
 package com.cmsc495;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +19,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
+            	// All pages listed here do not require login
                 .antMatchers("/", 
                 		"/greeting",
                 		"/about",
