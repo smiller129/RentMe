@@ -15,10 +15,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class GreetingController {
 
-    private static final String template = "%s!";
+    private static final String template = "%s";
 
-    @RequestMapping("/greeting")
-    public @ResponseBody Greeting greeting(@RequestParam(required=false, defaultValue="CMSC495") String name) {
+    @RequestMapping("/getGreeting")
+    public @ResponseBody Greeting getGreeting(@RequestParam(required=false, defaultValue="CMSC495") String name) {
         return new Greeting(String.format(template, name));
     }
 
