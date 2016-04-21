@@ -1,0 +1,91 @@
+import java.util.*;
+
+public class ItemController{
+	
+	List<Item> item_controller;
+
+	//Constructor. Initialize an empty list of items.
+	ItemController(){
+	
+		item_controller=new ArrayList<Item>();
+	}
+
+	//Return Item
+	Item getItem(int itemId){
+		
+		Item to_send=null;
+
+		//Loop in the items list and see if there is one whose id matches the argument given
+		for (int i=0; i<item_controller.size(); i++){
+		
+			Item item_now= item_controller.get(i);
+			
+			if (item_now.getId()==itemId){
+				
+				to_send=item_now;
+				break;
+			}
+		}
+		
+		return to_send;
+
+	}
+
+	//Return items list
+	List<Item> getItems(){
+	
+		return item_controller;
+	}
+
+	//Add item to the list
+
+	void addItem(int id, String name, String description){
+	
+		//Initialize reservations with empty list while adding a new item
+		List<Reservation> r = new ArrayList<Reservation>();
+		
+		//Create item object
+		Item i= new Item(id, name, description, r);
+		
+		//Add it to items list
+		item_controller.add(i);
+	}
+
+	//Update item in list
+	void updateItem(int itemId, String name, String description){
+	
+		//Loop in the items list and see if there is one whose id matches the argument given
+		for (int i=0; i<item_controller.size(); i++){
+		
+			Item item_now= item_controller.get(i);
+			
+			//If yes, then update that item
+			if (item_now.getId()==itemId){
+			
+				item_now.setName(name);
+				item_now.setDescription(description);
+				break;
+			}
+		}
+	}
+
+	void addReservation(int itemId, int r_id, Date start, Date end){
+	
+		//Create reservation object
+		Reservation r = new Reservation(r_id, itemId, start, end);
+		
+		//Loop in the items list and see if there is one whose id matches the argument given for itemId
+		for (int i=0; i<item_controller.size(); i++){
+		
+			Item item_now= item_controller.get(i);
+			
+			//If yes, then update that item and add add the above reservation to that item's reservation list
+			if (item_now.getId()==itemId){
+			
+				item_now.addReservation(r);
+				break;
+			}
+		}
+	}
+}
+
