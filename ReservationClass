@@ -1,0 +1,40 @@
+import java.util.*;
+
+public class Reservation{
+	
+	int id, itemId;
+	Date start, end;
+
+	//Constructor for reservation
+	Reservation(int id, int itemId, Date start, Date end){
+	
+		this.id = id;
+		this.itemId = itemId;
+		this.start = start;
+		this.end = end;
+	
+	}
+
+	void updateStartDate(Date start){
+	
+		this.start = start;
+	
+	}
+
+	void updateEndDate(Date end){
+	
+		this.end = end;
+	
+	}
+
+	public String toString(){
+	
+		String S="";
+		S="ID: "+id;
+		S+="; Start_Date: "+start.toString();
+		S+="; End_Date: "+end.toString();
+		return S;
+	
+	}
+
+}
