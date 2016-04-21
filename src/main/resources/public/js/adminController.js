@@ -1,14 +1,14 @@
 rentmeApp.controller('adminController',
 	function($rootScope, $http, $location, $route) {
-	var self = this;
-	self.user = $rootScope.loggedInUser;
 	if($rootScope.authenticated) {
-		type = self.user.principal.authorities[0].authority;
-		if(type == "ROLE_manager") {
+		var self = this;
+		self.user = $rootScope.loggedInUser;
+		self.type = self.user.principal.authorities[0].authority;
+		if(self.type == "ROLE_manager") {
 			
 		}
 		else {
-			$location.path("/")
+			$location.path("/");
 		}
 	}
 	else {
