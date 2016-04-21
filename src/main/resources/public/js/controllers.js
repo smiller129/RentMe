@@ -8,7 +8,7 @@
  */
 rentmeApp.controller('greetingController', ['$scope', '$http',
   function ($scope, $http) {
-	$http.get('/greeting')
+	$http.get('/getGreeting')
 		.success(function(data) {
 			$scope.greeting = data;
 		});
@@ -24,7 +24,7 @@ rentmeApp.controller('aboutController', ['$scope', '$http',
 
 rentmeApp.controller('itemController', ['$scope', '$http',
     function ($scope, $http) {
-		$http.get('/items')
+		$http.get('/getItems')
 			.success(function(data) {
 				$scope.items = data;
 			});
