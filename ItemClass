@@ -1,0 +1,76 @@
+import java.util.*;
+
+public class Item{
+	
+	int id;
+	String name;
+	String description;
+	List<Reservation> reservations;
+
+	//Constructor for class item
+	Item(int id, String name, String description, List<Reservation> reservations){
+		
+		this.id = id;
+		this.name = name;
+		this.description = description;
+		this.reservations = reservations;
+	}
+
+	int getId()
+	{
+		return id;
+	}
+
+	String getName()
+	{
+		return name;
+	}
+
+	String getDescription()
+	{
+		return description;
+	}
+
+	List<Reservation> getReservations(){
+		
+		return reservations;
+	}
+
+	void setName(String name){
+		
+		this.name = name;
+	}
+
+	void setDescription(String description)
+	{
+		this.description = description;
+	}
+
+	//Add reservation to the list
+	void addReservation(Reservation r){
+		
+		reservations.add(r);
+  }
+
+	public String toString(){
+		
+		String S="";
+		S="ID: "+id;
+		S+="\nName: "+name;
+		S+="\nDescription: "+description;
+		S+="\nReservations: ";
+		S+=""+reservations.size();
+		
+		if (reservations.size()!=0){
+			
+			for (int i=0; i<reservations.size(); i++){
+				
+				S+="\n"+(i+1)+". "+reservations.get(i);
+			}
+		}
+	
+		S+="\n\n";
+		return S;
+	
+	}
+}
